@@ -16,10 +16,11 @@ Principal Component Analysis (PCA) is applied to reduce the feature space of the
 ### 2. Active Learning Query Strategies
 We employ the following query strategies to decide which unlabeled samples to request labels for:
 1. Random Sampling: Selects random data points for labeling.
-2. Least Confidence: Selects data points where the classifier is least confident in its predictions.
-3. Margin Sampling: Selects data points where the classifier's confidence in the top two classes is closest.
-4. Entropy: Selects data points with the highest prediction uncertainty (entropy).
-5. Query by Committee: Uses an ensemble of classifiers to select data points with the highest disagreement among the classifiers.
+2. Uncertainty Sampling:
+  * Least Confidence: Selects data points where the classifier is least confident in its predictions.
+  * Margin Sampling: Selects data points where the classifier's confidence in the top two classes is closest.
+  * Entropy: Selects data points with the highest prediction uncertainty (entropy).
+3. Query by Committee: Uses an ensemble of classifiers to select data points with the highest disagreement among the classifiers.
 
 ### 3. Classification Model
 The classifier used in this project is a RandomForestClassifier, wrapped inside SklearnClassifier to work seamlessly with the active learning strategies.
